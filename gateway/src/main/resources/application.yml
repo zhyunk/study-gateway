@@ -7,6 +7,9 @@ spring:
 
   cloud:
     gateway:
+      default-filters:
+        - CustomFilter
+
       routes:
         - id: api-a
           uri: http://localhost:8081
@@ -29,12 +32,12 @@ spring:
           filters:
             - RewritePath=/c/re/(?<segment>.*), /c/rewrite-path/$\{segment}
 
-logging:
-  level:
-    org.springframework.cloud.gateway: TRACE
-    org.springframework.http.server.reactive: DEBUG
-    org.springframework.web.reactive: DEBUG
-    reactor.ipc.netty: DEBUG
-    reactor.netty: DEBUG
+# logging:
+#   level:
+#     org.springframework.cloud.gateway: TRACE
+#     org.springframework.http.server.reactive: DEBUG
+#     org.springframework.web.reactive: DEBUG
+#     reactor.ipc.netty: DEBUG
+#     reactor.netty: DEBUG
 
 
