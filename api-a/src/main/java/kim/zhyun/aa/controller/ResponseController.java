@@ -1,4 +1,4 @@
-package kim.zhyun.b.controller;
+package kim.zhyun.aa.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;

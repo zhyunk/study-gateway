@@ -1,5 +1,5 @@
 ### a
-GET http://localhost:8080/a/in
+GET http://localhost:8080/aa/in
 
 ### b
 GET http://localhost:8080/b/in
@@ -7,3 +7,11 @@ GET http://localhost:8080/b/in
 ### c
 GET http://localhost:8080/c/in
 
+### a rewrite
+GET http://localhost:8080/aa/re/in
+
+### b rewrite
+GET http://localhost:8080/b/re/in
+
+### c rewrite
+GET http://localhost:8080/c/re/in

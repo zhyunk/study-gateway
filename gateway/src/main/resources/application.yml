@@ -7,19 +7,34 @@ spring:
 
   cloud:
     gateway:
-      mvc:
-        routes:
-          - id: api-a
-            uri: http://localhost:8081
-            predicates:
-              - Path=/a/**
+      routes:
+        - id: api-a
+          uri: http://localhost:8081
+          predicates:
+            - Path=/aa/**
+          filters:
+            - RewritePath=/aa/re/(?<segment>.*), /aa/rewrite-path/$\{segment}
 
-          - id: api-b
-            uri: http://localhost:8082
-            predicates:
-              - Path=/b/**
+        - id: api-b
+          uri: http://localhost:8082
+          predicates:
+            - Path=/b/**
+          filters:
+            - RewritePath=/b/re/(?<segment>.*), /b/rewrite-path/$\{segment}
 
-          - id: api-c
-            uri: http://localhost:8083
-            predicates:
-              - Path=/c/**
+        - id: api-c
+          uri: http://localhost:8083
+          predicates:
+            - Path=/c/**
+          filters:
+            - RewritePath=/c/re/(?<segment>.*), /c/rewrite-path/$\{segment}
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.ipc.netty: DEBUG
+    reactor.netty: DEBUG
+
+

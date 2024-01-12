@@ -1,11 +1,11 @@
-package kim.zhyun.a;
+package kim.zhyun.aa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AApplication {
+public class AaApplication {
     public static void main(String[] args) {
-        SpringApplication.run(AApplication.class, args);
+        SpringApplication.run(AaApplication.class, args);
     }
 }
