@@ -1,0 +1,8 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /b
+
+spring:
+  application:
+    name: api-b

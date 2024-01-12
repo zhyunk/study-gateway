@@ -1,0 +1,6 @@
+rootProject.name = 'study-gateway'
+include 'gateway'
+include 'api-a'
+include 'api-b'
+include 'api-c'
+

@@ -1,0 +1,9 @@
+### a
+GET http://localhost:8080/a/in
+
+### b
+GET http://localhost:8080/b/in
+
+### c
+GET http://localhost:8080/c/in
+
