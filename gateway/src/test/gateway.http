@@ -27,3 +27,14 @@ GET http://localhost:8080/b/error
 ### c custom filter
 GET http://localhost:8080/c/exception
 
+
+### redirect
+GET http://localhost:8080/aa/asdasdas/help
+
+### redirect
+GET http://localhost:8080/aa/help
+
+
+### error
+GET http://localhost:8080/ㅁㄴㅇasd
+

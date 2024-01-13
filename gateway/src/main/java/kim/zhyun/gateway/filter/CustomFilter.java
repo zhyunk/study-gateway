@@ -36,15 +36,19 @@ public class CustomFilter extends AbstractGatewayFilterFactory<CustomFilter.Conf
                 case  "POST"            -> log.info("💁 new save 💾 --> %s".formatted(method));
             }
             
-            if (path.contains("/error") || path.contains("/exception")) {
+            if (path.contains("/help")) {
                 req = redirect(exchange, path, "move to /rewrite-path");
+            }
+            
+            if (path.contains("/error") || path.contains("/exception")) {
+                throw new RuntimeException("에러 발생 🚨");
             }
             
             return chain.filter(exchange.mutate().request(req).build());
         };
     }
 
-    
+
     private static ServerHttpRequest redirect(ServerWebExchange exchange, String path, String message) {
         ServerHttpResponse response = exchange.getResponse();
         response.setStatusCode(HttpStatus.I_AM_A_TEAPOT);
@@ -57,7 +61,7 @@ public class CustomFilter extends AbstractGatewayFilterFactory<CustomFilter.Conf
                 .method(GET)
                 .uri(transformedUri).build();
     }
-    
+
     public static class Config { }
-    
+
 }
